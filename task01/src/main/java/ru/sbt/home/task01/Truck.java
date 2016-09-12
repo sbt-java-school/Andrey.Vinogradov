@@ -1,6 +1,6 @@
 package ru.sbt.home.task01;
 
-public class Truck implements Loadable {
+public class Truck {
 	/**
 	 * Current goods count
 	 */
