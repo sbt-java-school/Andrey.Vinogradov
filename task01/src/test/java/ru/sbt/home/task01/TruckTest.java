@@ -7,7 +7,7 @@ import java.util.Arrays;
 
 public class TruckTest {
 	@Test
-	public void test() throws NoSuchMethodException {
+	public void test() {
 		Truck truck = new Truck(10);
 		
 		Arrays.asList(5, 10, 1, 3, 7, 1, 2).forEach(truck::load);
