@@ -54,7 +54,7 @@ public class Server {
 						
 						System.out.println("Новое соединение: " + socket);
 						
-						clientService.submit(new SocketHandler(socket, puzzleBound));
+						clientService.submit(new SocketHandler(socket));
 					}
 				} catch (IOException e) {
 					e.printStackTrace();
@@ -85,7 +85,7 @@ public class Server {
 		
 		private boolean keepGoing;
 		
-		public SocketHandler(Socket socket, int puzzleBound) throws IOException {
+		public SocketHandler(Socket socket) throws IOException {
 			super(socket);
 			
 			lastGuess = puzzleBound;
