@@ -21,6 +21,9 @@
         <module>task09</module>
         <module>task10</module>
         <module>task11</module>
+        <module>task12</module>
+        <module>task13</module>
+        <module>task14</module>
     </modules>
 
     <build>
@@ -66,6 +69,11 @@
             <artifactId>junit</artifactId>
             <version>4.12</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.21</version>
         </dependency>
     </dependencies>
 
