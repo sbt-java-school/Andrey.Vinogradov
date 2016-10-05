@@ -32,7 +32,7 @@ public class TimeCacheHandlerTest {
 		args = new Object[]{2, 1};
 		Assert.assertEquals(args[0] + " * " + args[1] + " = 2", 2, dch.get(method, args));
 		
-		Thread.sleep(15_000);
+		Thread.sleep(10_000);
 		
 		args = new Object[]{7, 2};
 		Assert.assertEquals(args[0] + " * " + args[1] + " = null", null, dch.get(method, args));
