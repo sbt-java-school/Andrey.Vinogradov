@@ -11,6 +11,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 public class Server {
 	public static final int PORT = 1234;
@@ -36,6 +37,16 @@ public class Server {
 		this.puzzleBound = puzzleBound;
 	}
 	
+	public static void main(String[] args) throws InterruptedException {
+		Server server = new Server();
+		
+		server.start();
+		
+		TimeUnit.SECONDS.sleep(60);
+		
+		server.stop();
+	}
+	
 	public void start() {
 		clientService = Executors.newFixedThreadPool(threadCount);
 		serverService = Executors.newSingleThreadExecutor();
@@ -52,12 +63,12 @@ public class Server {
 					while (true) {
 						socket = serverSocket.accept();
 						
-						System.out.println("Новое соединение: " + socket);
+						LOGGER.debug("Новое соединение: " + socket);
 						
 						clientService.submit(new SocketHandler(socket));
 					}
 				} catch (IOException e) {
-					e.printStackTrace();
+					// ignore
 				}
 			});
 		} catch (IOException e) {
@@ -107,7 +118,7 @@ public class Server {
 		 *                         1 если загадано больше
 		 * @return новое предположение
 		 */
-		protected int makeNextGuess(int comparisonResult) {
+		public int makeNextGuess(int comparisonResult) {
 			// последний сдвиг, используемый в предположении
 			// +1 - чтобы не уйти в 0 (всегда будет не меньше 1)
 			lastShift = (lastShift + 1) / 2;
@@ -124,7 +135,7 @@ public class Server {
 		/**
 		 * Остновка прцесса сервера, вызывается из пакета
 		 */
-		protected void stopGuess() {
+		public void stopGuess() {
 			keepGoing = false;
 		}
 		

@@ -28,12 +28,18 @@ public class Client extends AbstractSocketHandler {
 		LOGGER.debug("Создан новый клиент " + socket);
 	}
 	
+	public static void main(String[] args) throws UnknownHostException, IOException {
+		Client client = new Client();
+		
+		client.run();
+	}
+	
 	/**
 	 * Загадывание числа, вызывается из пакета
 	 *
 	 * @param numberBound
 	 */
-	protected void makePuzzle(int numberBound) {
+	public void makePuzzle(int numberBound) {
 		puzzle = (int) (numberBound * Math.random());
 	}
 	
@@ -43,14 +49,14 @@ public class Client extends AbstractSocketHandler {
 	 * @param offer
 	 * @return
 	 */
-	protected int compareToPuzzle(int offer) {
+	public int compareToPuzzle(int offer) {
 		return Integer.compare(puzzle, offer);
 	}
 	
 	/**
 	 * Остановка клиента, вызыватся из пакета
 	 */
-	protected void stop() {
+	public void stop() {
 		keepGoing = false;
 	}
 	
