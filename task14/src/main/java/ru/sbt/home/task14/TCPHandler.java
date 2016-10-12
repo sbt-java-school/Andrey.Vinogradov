@@ -8,10 +8,10 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.Objects;
 
-public abstract class AbstractSocketHandler implements Runnable {
+public abstract class TCPHandler implements Runnable {
 	private Socket socket;
 	
-	protected AbstractSocketHandler(Socket socket) throws IOException {
+	protected TCPHandler(Socket socket) throws IOException {
 		this.socket = socket;
 	}
 	
