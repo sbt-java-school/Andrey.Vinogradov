@@ -17,5 +17,8 @@
 ###[task13] (https://github.com/sbt-java-school/Andrey.Vinogradov/tree/master/task13)
 > Реализация сервера / клиента отгадывания чисел.
 
+###[task14] (https://github.com/sbt-java-school/Andrey.Vinogradov/tree/master/task14)
+> Реализация сервера-чата.
+
 ###[task15] (https://github.com/sbt-java-school/Andrey.Vinogradov/tree/master/task15)
 > Реализация нодов конструирования.
