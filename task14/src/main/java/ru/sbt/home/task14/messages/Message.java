@@ -1,5 +1,10 @@
 package ru.sbt.home.task14.messages;
 
+/**
+ * Основной интерфейс сообщения чата
+ * Пересылаемый массив байт состоит из отправителя, получателя и сообщения
+ * Длины ограничены из-за UDP протокола
+ */
 public interface Message {
 	public static final int NAME_SIZE = 16;
 	public static final int TEXT_SIZE = 150;

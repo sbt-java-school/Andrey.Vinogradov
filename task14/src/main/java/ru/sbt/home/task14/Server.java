@@ -13,6 +13,10 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+/**
+ * Сервер
+ * Занимается аутентификацией, мультикастом вошедших пользователей, пересылкой сообщений от пользователя к пользователю (это должен делать отдельный сервер приложений)
+ */
 public class Server {
 	public static final int TCP_PORT = 9050;
 	public static final int UDP_PORT = 9060;
@@ -127,9 +131,13 @@ public class Server {
 	public void addUser(String login, InetAddress address) throws SocketException, UnknownHostException {
 		users.put(login, new UDPSender(address, Client.UDP_PORT));
 		
-		multiSender.sendData(new MessageImpl("system", null, "Присоединился пользователь " + login));
+		multiSender.sendData(new MessageImpl(Message.SYSTEM, null, "Присоединился пользователь " + login));
 	}
 	
+	/**
+	 * Аутентификатор
+	 * Запускается отдельно для каждого постучавшегося
+	 */
 	public class Authenticator extends TCPHandler {
 		public Authenticator(Socket socket) throws IOException {
 			super(socket);

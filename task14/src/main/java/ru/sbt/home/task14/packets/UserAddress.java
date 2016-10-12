@@ -6,6 +6,9 @@ import java.net.InetAddress;
 import java.net.SocketException;
 import java.net.UnknownHostException;
 
+/**
+ * Пакет для передачи адреса пользователя
+ */
 public class UserAddress implements Packet<InetAddress, Server> {
 	private static final long serialVersionUID = 1L;
 	

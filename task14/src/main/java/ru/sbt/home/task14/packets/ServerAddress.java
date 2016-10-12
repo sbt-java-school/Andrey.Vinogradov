@@ -5,6 +5,12 @@ import ru.sbt.home.task14.Client;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
+/**
+ * Пакет для передачи адреса сервера чата
+ * Нужно для расширяемости (которое не сделано) архитектуры
+ * Для аутентификации должен быть выделенный сервер, который после проверки пользователя выдает ему адрес сервера приложений
+ * исходя из их загруженности и / или близости к пользователю
+ */
 public class ServerAddress implements Packet<InetAddress, Client> {
 	private static final long serialVersionUID = 1L;
 	

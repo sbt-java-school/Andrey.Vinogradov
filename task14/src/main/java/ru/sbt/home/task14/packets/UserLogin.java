@@ -6,6 +6,9 @@ import java.io.Serializable;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
+/**
+ * Пакет для передачи логина-пароля при аутентификации
+ */
 public class UserLogin implements Packet<UserLogin.LoginPass, Server> {
 	private static final long serialVersionUID = 1L;
 	
