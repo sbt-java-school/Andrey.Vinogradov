@@ -14,6 +14,10 @@ public class ConverterImpl extends AbstractConverter {
 		
 		Strategy<?, OUT> strat = getStrategy(value.getClass(), resultClass);
 		
+		if (strat == null) {
+			return null;
+		}
+		
 		return strat.convert(value);
 	}
 }
