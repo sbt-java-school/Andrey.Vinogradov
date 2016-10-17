@@ -22,3 +22,6 @@
 
 ###[task15] (https://github.com/sbt-java-school/Andrey.Vinogradov/tree/master/task15)
 > Реализация нодов конструирования.
+
+###[task16] (https://github.com/sbt-java-school/Andrey.Vinogradov/tree/master/task16)
+> Реализация конвертера.

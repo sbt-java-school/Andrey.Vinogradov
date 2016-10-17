@@ -25,6 +25,7 @@
         <module>task13</module>
         <module>task14</module>
         <module>task15</module>
+        <module>task16</module>
     </modules>
 
     <build>
@@ -47,6 +48,11 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.1</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
