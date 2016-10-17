@@ -10,7 +10,7 @@ import java.net.UnknownHostException;
 
 public class ClientActivityListener implements ServerListener {
 	public static final String MULTI_HOST = "228.5.6.7";
-	public static final int MULTI_PORT = 9080;
+	public static final int MULTI_PORT = 19080;
 
 	private UDPSender multiSender;
 

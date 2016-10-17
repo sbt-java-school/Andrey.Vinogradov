@@ -30,7 +30,7 @@ public class ServerAddress implements Packet<InetAddress, Client> {
 		Packet packet = null;
 		
 		try {
-			return new UserAddress(context.getLogin(), InetAddress.getLocalHost());
+			return new UserAddress(context.getLogin(), InetAddress.getByName(Client.HOST));
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
 		}

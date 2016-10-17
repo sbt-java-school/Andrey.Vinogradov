@@ -1,5 +1,6 @@
 package ru.sbt.home.task14.packets;
 
+import ru.sbt.home.task14.Client;
 import ru.sbt.home.task14.Server;
 
 import java.io.Serializable;
@@ -26,7 +27,7 @@ public class UserLogin implements Packet<UserLogin.LoginPass, Server> {
 		Packet packet = null;
 		
 		try {
-			packet = new ServerAddress(InetAddress.getLocalHost());
+			packet = new ServerAddress(InetAddress.getByName(Client.HOST));
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
 		}

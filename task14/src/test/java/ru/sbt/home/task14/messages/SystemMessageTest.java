@@ -8,7 +8,7 @@ import java.io.UnsupportedEncodingException;
 public class SystemMessageTest {
 	@Test
 	public void test() throws UnsupportedEncodingException {
-		Message original = new MessageImpl("long login for test only 1", "long login for test only 2", "msg");
+		Message original = new MessageImpl("long login for test only 1", null, "msg");
 		Message copy = new MessageImpl(original.getBytes());
 		
 		Assert.assertEquals("original.sender == copy.sender", original.getSender(), copy.getSender());
@@ -20,8 +20,7 @@ public class SystemMessageTest {
 		copy = new MessageImpl(original.getBytes());
 		
 		Assert.assertEquals("original.sender == copy.sender", original.getSender(), copy.getSender());
-		Assert.assertNull("original.receiver == null", original.getReceiver());
-		Assert.assertNull("copy.receiver == null", copy.getReceiver());
+		Assert.assertEquals("original.receiver == copy.receiver", original.getReceiver(), copy.getReceiver());
 		Assert.assertEquals("original.message == copy.message", original.getMessage(), copy.getMessage());
 	}
 }

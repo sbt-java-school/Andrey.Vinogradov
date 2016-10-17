@@ -1,6 +1,5 @@
 package ru.sbt.home.task14.net;
 
-import ru.sbt.home.task14.ClientActivityListener;
 import ru.sbt.home.task14.messages.Message;
 import ru.sbt.home.task14.messages.MessageImpl;
 
@@ -30,7 +29,7 @@ public class UDPReceiver implements Closeable {
 
 		group = InetAddress.getByName(host);
 
-		multiSocket = new MulticastSocket(ClientActivityListener.MULTI_PORT);
+		multiSocket = new MulticastSocket(port);
 		multiSocket.joinGroup(group);
 
 		packet = new DatagramPacket(new byte[Message.BYTE_SIZE], Message.BYTE_SIZE);
