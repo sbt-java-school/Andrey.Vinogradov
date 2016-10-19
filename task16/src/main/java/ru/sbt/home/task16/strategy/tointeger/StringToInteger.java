@@ -9,6 +9,6 @@ public class StringToInteger extends AbstractStrategy<String, Integer> {
 	
 	@Override
 	public Integer convert(Object value) {
-		return Integer.parseInt((String) value);
+		return Double.valueOf((String) value).intValue();
 	}
 }

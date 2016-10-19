@@ -14,7 +14,7 @@ public class ConverterTest {
 		Converter converter = new ConverterImpl();
 		
 		converter.addStrategy(new BigDecimalToInteger(BigDecimal.class, Integer.class));
-		Assert.assertTrue("BigDecimal 1.5 -> 1", converter.convert(new BigDecimal(1.5), Integer.class).equals(1));
+		Assert.assertTrue("BigDecimal 1.5 -> 1", converter.convert(BigDecimal.valueOf(1.5), Integer.class).equals(1));
 		
 		converter.addStrategy(new BigIntegerToInteger(BigInteger.class, Integer.class));
 		Assert.assertTrue("BigInteger 1 -> 1", converter.convert(new BigInteger("1"), Integer.class).equals(1));
