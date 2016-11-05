@@ -2,7 +2,13 @@ package ru.sbt.home.task02;
 
 import java.util.*;
 
+/**
+ * DAO из памяти
+ */
 public class TruckDaoMemoryImpl implements TruckDao {
+	/**
+	 * Формирование простого списка грузовиков
+	 */
 	private final List<Truck> list = new ArrayList<>(Arrays.asList(
 			new Truck(1, "KAMAZ", 10),
 			new Truck(2, "KAMAZ", 30),
@@ -15,9 +21,10 @@ public class TruckDaoMemoryImpl implements TruckDao {
 	private Map<Long, Truck> listByID = new TreeMap<>();
 	private Map<String, List<Truck>> listByType = new HashMap<>();
 	
+	// Формирование сложных листов грузовиков
 	{
 		for (Truck truck : list) {
-			Truck previousValue = listByID.put(truck.getId(), truck);
+			listByID.put(truck.getId(), truck);
 			
 			List<Truck> tmpList = listByType.get(truck.getType());
 			if (tmpList == null) {
@@ -28,7 +35,6 @@ public class TruckDaoMemoryImpl implements TruckDao {
 			
 			tmpList.add(truck);
 		}
-		
 	}
 	
 	@Override

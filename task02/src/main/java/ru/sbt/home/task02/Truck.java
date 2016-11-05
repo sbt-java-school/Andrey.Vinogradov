@@ -1,5 +1,8 @@
 package ru.sbt.home.task02;
 
+/**
+ * Класс с минимальной функциональностью. Просто чтобы было.
+ */
 public class Truck {
 	private long id;
 	private String type;
@@ -21,6 +24,26 @@ public class Truck {
 	
 	public String getType() {
 		return type;
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) {
+			return false;
+		}
+		
+		if (o == null || getClass() != o.getClass()) {
+			return false;
+		}
+		
+		Truck truck = (Truck) o;
+		
+		return id == truck.id;
+	}
+	
+	@Override
+	public int hashCode() {
+		return Long.hashCode(id);
 	}
 	
 	@Override
