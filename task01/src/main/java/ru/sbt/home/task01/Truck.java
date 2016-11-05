@@ -5,6 +5,7 @@ public class Truck {
 	 * Current goods count
 	 */
 	private int count;
+	
 	/**
 	 * Current goods mass
 	 */
@@ -16,7 +17,7 @@ public class Truck {
 	private int maxMass;
 	
 	/**
-	 * Constructs new Truck with 0 max mass
+	 * Constructs new Truck having 0 max mass
 	 */
 	public Truck() {
 		this(0);
@@ -25,7 +26,7 @@ public class Truck {
 	/**
 	 * Constructs new Truck with given max mass
 	 *
-	 * @param maxMass new max mass. Do not check if current mass larger then given new max mass
+	 * @param maxMass max mass
 	 */
 	public Truck(int maxMass) {
 		this.maxMass = maxMass;
@@ -53,16 +54,26 @@ public class Truck {
 		count = 0;
 	}
 	
+	/**
+	 * Gets current max mass
+	 *
+	 * @return current truck max mass
+	 */
 	public int getMaxMass() {
 		return maxMass;
 	}
 	
+	/**
+	 * Sets new truck max mass. Does not check if current mass larger then given new max mass
+	 *
+	 * @param w new max mass
+	 */
 	public void setMaxMass(int w) {
 		maxMass = w;
 	}
 	
 	/**
-	 * Returns current mass
+	 * Returns current truck mass
 	 *
 	 * @return current mass
 	 */
@@ -71,7 +82,7 @@ public class Truck {
 	}
 	
 	/**
-	 * Returns current goods count
+	 * Returns current truck goods count
 	 *
 	 * @return current goods count
 	 */
