@@ -1,12 +1,12 @@
 package ru.sbt.home.task04;
 
-public class Test extends ParentTest {
+public class Utility extends ParentUtility {
 	public static final long VERSION = 1L;
 	
 	private long f2;
 	private long f3;
 	
-	public Test() {
+	public Utility() {
 		super();
 	}
 	
